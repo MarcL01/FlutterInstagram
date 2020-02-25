@@ -11,8 +11,8 @@ In the command terminal, run the following commands:
     $ flutter packages get
     $ flutter run
 
-## 📷 Screenshots (Coming Soon)
-![Coming Soon](https://via.placeholder.com/200x400.png?text=Coming+Soon!)
+## 📷 Screenshots
+![Mockup 1](https://raw.githubusercontent.com/BigMarco254/FlutterInstagram/master/mockups/mockup-1.jpeg)
 
 ## 🤔 Issues:
  * None yet! 🙏
