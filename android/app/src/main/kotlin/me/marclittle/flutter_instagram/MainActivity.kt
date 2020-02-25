@@ -1,4 +1,4 @@
-package me.marclittle.lightningtalk1
+package me.marclittle.flutter_instagram
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

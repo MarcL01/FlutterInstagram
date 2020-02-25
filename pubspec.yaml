@@ -1,5 +1,5 @@
-name: lightningtalk1
-description: Flutter Project for LightningTalk
+name: flutter_instagram
+description: Instagram recreated in flutter
 version: 1.0.0+1
 
 environment:
