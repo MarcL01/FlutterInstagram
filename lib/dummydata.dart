@@ -39,50 +39,98 @@ class DummyData {
   ];
   static List<Post> posts = [
     Post(
-      pfp: "https://loremflickr.com/320/240/profile?lock=1",
-      username: "jessica.runolfsson",
-      image: "http://loremflickr.com/640/480/cats?lock=2",
-      likes: 97598,
-      description: "Illo alias repudiandae qui dolor minima exercitationem.",
-      timeago: "3 hours ago",
-      comments: [
-        Comment(
-          username: "ilene",
-          comment: "in expedita est ea"
-        ),
-        Comment(
-          username: "gabriella",
-          comment: "Fugiat sapiente quo id non harum repudiandae iure quas fugit."
-        ),
-        Comment(
-          username: "edmond",
-          comment: "qui sed nemo"
-        ),
-      ]
-    ),
+        pfp: "https://loremflickr.com/320/240/profile?lock=1",
+        username: "jessica.runolfsson",
+        image: "http://loremflickr.com/640/480/cats?lock=2",
+        likes: 97598,
+        description: "Illo alias repudiandae qui dolor minima exercitationem.",
+        timeago: "3 hours ago",
+        comments: [
+          Comment(username: "ilene", comment: "in expedita est ea"),
+          Comment(
+              username: "gabriella",
+              comment:
+                  "Fugiat sapiente quo id non harum repudiandae iure quas fugit."),
+          Comment(username: "edmond", comment: "qui sed nemo"),
+        ]),
     Post(
-      pfp: "https://loremflickr.com/320/240/profile?lock=3",
-      username: "gardner.hickle",
-      image: "http://loremflickr.com/640/480/cats?lock=4",
-      likes: 75476,
-      description: "Possimus veniam eaque cum rem debitis tenetur illo. Cumque ut qui corporis autem repellat sunt deserunt beatae. Itaque rem eum rerum hic laboriosam. Debitis voluptate ipsa maiores inventore ex quia velit in. Quod dolore quis voluptas quae aperiam.",
-      timeago: "4 hours ago",
-      comments: [
-        Comment(
-          username: "sharon",
-          comment: "Eum modi dicta consectetur omnis alias quia. Consequatur vel sed expedita. Ipsum voluptas nostrum saepe iste odio perferendis cumque magnam nisi. Ut sit impedit voluptas modi. Voluptatem ducimus nobis aliquid ab saepe vel adipisci asperiores vel. Animi et est reiciendis consequatur unde aut repellendus sunt.",
-        ),
-        Comment(
-          username: "carson",
-          comment: "ea facilis fugit",
-        ),
-        Comment(
-          username: "teagan",
-          comment: "Libero sed corporis commodi id. Accusantium fuga accusamus consequatur praesentium. Voluptate sequi dolorem illum aut sed dolor labore. Velit quia dicta sed minus eius architecto. Est ducimus facilis aut suscipit similique eos quo omnis autem.",
-        ),
-      ]
-    ),
+        pfp: "https://loremflickr.com/320/240/profile?lock=3",
+        username: "gardner.hickle",
+        image: "http://loremflickr.com/640/480/cats?lock=4",
+        likes: 75476,
+        description:
+            "Possimus veniam eaque cum rem debitis tenetur illo. Cumque ut qui corporis autem repellat sunt deserunt beatae. Itaque rem eum rerum hic laboriosam. Debitis voluptate ipsa maiores inventore ex quia velit in. Quod dolore quis voluptas quae aperiam.",
+        timeago: "4 hours ago",
+        comments: [
+          Comment(
+            username: "sharon",
+            comment:
+                "Eum modi dicta consectetur omnis alias quia. Consequatur vel sed expedita. Ipsum voluptas nostrum saepe iste odio perferendis cumque magnam nisi. Ut sit impedit voluptas modi. Voluptatem ducimus nobis aliquid ab saepe vel adipisci asperiores vel. Animi et est reiciendis consequatur unde aut repellendus sunt.",
+          ),
+          Comment(
+            username: "carson",
+            comment: "ea facilis fugit",
+          ),
+          Comment(
+            username: "teagan",
+            comment:
+                "Libero sed corporis commodi id. Accusantium fuga accusamus consequatur praesentium. Voluptate sequi dolorem illum aut sed dolor labore. Velit quia dicta sed minus eius architecto. Est ducimus facilis aut suscipit similique eos quo omnis autem.",
+          ),
+        ]),
   ];
+
+  static Map<DateTime, List<Activity>> activities = {
+    DateTime(2020, 1, 30): [
+      Activity(
+        type: ActivityType.COMMENTED,
+        pfp: "https://s3.amazonaws.com/uifaces/faces/twitter/amayvs/128.jpg",
+        username: "katelynn",
+        timeago: "2w",
+        postThumbnail: "http://loremflickr.com/640/480/food",
+        extraData: "@your.name.here",
+      ),
+      Activity(
+        type: ActivityType.STARTED_FOLLOWING,
+        pfp: "https://s3.amazonaws.com/uifaces/faces/twitter/lvovenok/128.jpg",
+        username: "joelle",
+        timeago: "2w",
+      ),
+      Activity(
+        type: ActivityType.MENTIONED_COMMENT,
+        pfp: "https://s3.amazonaws.com/uifaces/faces/twitter/scrapdnb/128.jpg",
+        username: "maud",
+        timeago: "2w",
+        postThumbnail: "http://loremflickr.com/640/480/food",
+        extraData: "@your.name.here",
+      ),
+    ]
+  };
+}
+
+enum ActivityType {
+  MENTIONED_COMMENT, // mentioned in a comment
+  STARTED_FOLLOWING, // started following you
+  LIKED_POST, // liked your post
+  COMMENTED, // commented on your post
+  TAGGED, // tagged you in a post
+}
+
+class Activity {
+  final ActivityType type;
+  final String pfp;
+  final String username;
+  final String timeago;
+  final String postThumbnail;
+  final String extraData;
+
+  const Activity({
+    this.type,
+    this.pfp,
+    this.username,
+    this.timeago,
+    this.postThumbnail,
+    this.extraData,
+  });
 }
 
 class StoryDescriber {
